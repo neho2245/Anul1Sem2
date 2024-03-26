@@ -22,7 +22,7 @@ typedef struct node {
 
 TSortedList create(T value) {
     // TODO (se va completa la Cerința 2)
-    TSortedList list = (TSortedList) calloc(1, sizeof(TSortedList));
+    TSortedList list = calloc(1, sizeof(TNode)); // grija la sizeof (trebuie size de structura in sine)
     list->value = value;
     list->next = NULL;  
     return list;
@@ -62,7 +62,6 @@ TSortedList insert (TSortedList list, T value) {
         list = node;
         return list;
     }
-
     node->next = itr;
     prev->next = node;
     return list;
